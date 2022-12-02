@@ -11,14 +11,14 @@ namespace TelegramBot.Handler.Errors
 {
     public static class ErrorCurrencyBot
     {
-        public static async Task IsNullCurrency(ITelegramBotClient botClient, Update update)
+        public static async Task<string> IsNullCurrency()
         {
-            await botClient.SendTextMessageAsync(update.Message.Chat, Messages.CurrencyNotSupported);
+            return Messages.CurrencyNotSupported;
         }
 
-        public static async Task InvalidInput(ITelegramBotClient botClient, Update update)
+        public static async Task<string> InvalidInput()
         {
-            await botClient.SendTextMessageAsync(update.Message.Chat, Messages.InvalidInput);
+            return Messages.InvalidInput;
         }
     }
 }

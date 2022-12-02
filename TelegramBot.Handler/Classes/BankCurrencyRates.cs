@@ -7,6 +7,6 @@
         public double BaseCurrency { get; set; }
         public string BaseCurrencyLit { get; set; }
 
-        public List<CurrencyData>? exchangeRate { get; set; }
+        public List<CurrencyData>? ExchangeRate { get; set; }
     }
 }

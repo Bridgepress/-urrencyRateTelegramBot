@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using TelegramBot.Handler.Interfaces;
 
 namespace TelegramBot.Handler
 {
-    public class LoaderExchangeRates
+    public class LoaderExchangeRates : IApiRequest
     {
         private const string _url = "https://api.privatbank.ua/p24api/";
         private HttpClient _httpClient = new HttpClient();
