@@ -41,8 +41,8 @@ namespace TelegramBot.Handler
                     var newCurrency = _currencyRates.ExchangeRate.FirstOrDefault(x => x.Currency.ToLower() == words[0].ToLower());
                     if (newCurrency != null)
                     {
-                       message = $"{newCurrency.BaseCurrency} : {newCurrency.Currency} - {Messages.SaleRate} " +
-                                $"{newCurrency.SaleRate}, {Messages.PurchaseRate} {newCurrency.PurchaseRate}";
+                        message = $"{newCurrency.BaseCurrency} : {newCurrency.Currency} - {Messages.SaleRate} " +
+                                 $"{newCurrency.SaleRate}, {Messages.PurchaseRate} {newCurrency.PurchaseRate}";
                     }
                     else
                     {

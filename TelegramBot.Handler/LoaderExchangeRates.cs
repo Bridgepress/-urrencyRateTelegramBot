@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using System.Text.Json;
 using TelegramBot.Handler.Interfaces;
 
 namespace TelegramBot.Handler

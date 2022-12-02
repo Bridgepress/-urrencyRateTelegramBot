@@ -1,13 +1,11 @@
 using Moq;
-using Telegram.Bot;
-using Telegram.Bot.Polling;
 using TelegramBot.Handler.Interfaces;
 
 namespace TelegramBot.Handler.Tests
 {
     [TestClass]
     public class CurrencyDataHandlerTests
-    {  
+    {
         [TestMethod]
         [DataRow("EUE 01.11.2022", "Currency code not supported")]
         [DataRow("EUEs 01.11.2022", "Invalid input")]
