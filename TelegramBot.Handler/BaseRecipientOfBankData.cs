@@ -3,15 +3,9 @@ using TelegramBot.Handler.Interfaces;
 
 namespace TelegramBot.Handler
 {
-    public class LoaderExchangeRates : IApiRequest
+    public abstract class BaseRecipientOfBankData : IApiRequest
     {
-        private const string _url = "https://api.privatbank.ua/p24api/";
-        private HttpClient _httpClient = new HttpClient();
-
-        public LoaderExchangeRates()
-        {
-            _httpClient.BaseAddress = new Uri(_url);
-        }
+        protected HttpClient _httpClient = new HttpClient();
 
         public async Task<BankCurrencyRates?> ApiRequest(DateTime dateTime)
         {
@@ -24,6 +18,5 @@ namespace TelegramBot.Handler
             }
             return null;
         }
-
     }
 }

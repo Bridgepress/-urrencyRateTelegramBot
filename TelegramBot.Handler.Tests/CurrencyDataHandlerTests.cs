@@ -14,7 +14,7 @@ namespace TelegramBot.Handler.Tests
         public async Task ErorrRequest(string testString, string expectedValue)
         {
             // Arrange
-            IApiRequest loaderExchangeRates = new LoaderExchangeRates();
+            IApiRequest loaderExchangeRates = new RecipientPrivatBankData();
             CurrencyDataHandler currencyDataHandler = new CurrencyDataHandler();
             // Act
             string strResult = await currencyDataHandler.SerchEnterCurrencyData(testString, loaderExchangeRates);

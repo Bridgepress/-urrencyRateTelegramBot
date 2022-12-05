@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Bad request</value>
+  </data>
   <data name="CurrencyNotSupported" xml:space="preserve">
     <value>Currency code not supported</value>
   </data>
@@ -125,9 +128,6 @@
   </data>
   <data name="Instruction" xml:space="preserve">
     <value>Enter currency code and date in this format "13.01.2019"</value>
-  </data>
-  <data name="InvalidInput" xml:space="preserve">
-    <value>Invalid input</value>
   </data>
   <data name="PurchaseRate" xml:space="preserve">
     <value>Purchase Rate:</value>

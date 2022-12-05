@@ -61,6 +61,15 @@ namespace TelegramBot.Handler.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Bad request.
+        /// </summary>
+        internal static string BadRequest {
+            get {
+                return ResourceManager.GetString("BadRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Currency code not supported.
         /// </summary>
         internal static string CurrencyNotSupported {
@@ -84,15 +93,6 @@ namespace TelegramBot.Handler.Resources {
         internal static string Instruction {
             get {
                 return ResourceManager.GetString("Instruction", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Invalid input.
-        /// </summary>
-        internal static string InvalidInput {
-            get {
-                return ResourceManager.GetString("InvalidInput", resourceCulture);
             }
         }
         

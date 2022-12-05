@@ -4,14 +4,14 @@ namespace TelegramBot.Handler.Errors
 {
     public static class ErrorCurrencyBot
     {
-        public static async Task<string> IsNullCurrency()
+        public static async Task<string> CurrencyNotSupported()
         {
             return Messages.CurrencyNotSupported;
         }
 
         public static async Task<string> InvalidInput()
         {
-            return Messages.InvalidInput;
+            return Messages.BadRequest;
         }
     }
 }

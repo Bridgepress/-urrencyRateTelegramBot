@@ -9,8 +9,9 @@ namespace TelegramBot.Handler
 {
     public class CurrencyDataHandler : BaseBotDataHandler
     {
-        private IApiRequest _loaderExchangeRates = new LoaderExchangeRates();
+        private IApiRequest _loaderExchangeRates = new RecipientPrivatBankData();
         private BankCurrencyRates _currencyRates;
+        private const string _pattern = @"^[a-zA-Z]{3} \d{1,2}.\d{1,2}.\d{4}$";
 
         public override async Task UpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
@@ -30,11 +31,11 @@ namespace TelegramBot.Handler
         public async Task<string> SerchEnterCurrencyData(string userMessage, IApiRequest loaderExchangeRates)
         {
             DateTime date;
-            string pattern = @"^[a-zA-Z]{3} \d{1,2}.\d{1,2}.\d{4}$";
-            string message = "";
-            if (Regex.IsMatch(userMessage, pattern))
+            string message = string.Empty;
+            const char spaceCharacter = ' ';
+            if (Regex.IsMatch(userMessage, _pattern))
             {
-                var words = userMessage.Split(' ');
+                var words = userMessage.Split(spaceCharacter);
                 if (DateTime.TryParse(words[1], out date))
                 {
                     _currencyRates = await loaderExchangeRates.ApiRequest(date);
@@ -46,7 +47,7 @@ namespace TelegramBot.Handler
                     }
                     else
                     {
-                        message = await ErrorCurrencyBot.IsNullCurrency();
+                        message = await ErrorCurrencyBot.CurrencyNotSupported();
                     }
                 }
             }
