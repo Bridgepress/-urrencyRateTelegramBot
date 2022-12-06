@@ -2,14 +2,14 @@
 
 namespace TelegramBot.Handler.Errors
 {
-    public static class ErrorCurrencyBot
+    public static class ErrorsMessenger
     {
         public static async Task<string> CurrencyNotSupported()
         {
             return Messages.CurrencyNotSupported;
         }
 
-        public static async Task<string> InvalidInput()
+        public static async Task<string> BadRequest()
         {
             return Messages.BadRequest;
         }
