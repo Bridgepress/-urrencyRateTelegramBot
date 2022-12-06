@@ -8,8 +8,8 @@ namespace TelegramBot.Handler.Tests
     {
         [TestMethod]
         [DataRow("EUE 01.11.2022", "Currency code not supported")]
-        [DataRow("EUEs 01.11.2022", "Invalid input")]
-        [DataRow("", "Invalid input")]
+        [DataRow("EUEs 01.11.2022", "Bad request")]
+        [DataRow("", "Bad request")]
 
         public async Task ErorrRequest(string testString, string expectedValue)
         {
@@ -33,7 +33,7 @@ namespace TelegramBot.Handler.Tests
             {
                 Bank = "PB",
                 BaseCurrency = 1,
-                BaseCurrencyLit = "UAH",
+                BaseCurrencyAcronym = "UAH",
                 ExchangeRate = new List<CurrencyData>
                 {
                     new CurrencyData
