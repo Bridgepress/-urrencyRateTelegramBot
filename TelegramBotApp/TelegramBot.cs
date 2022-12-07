@@ -1,7 +1,7 @@
 ﻿using Telegram.Bot;
 using Telegram.Bot.Extensions.Polling;
+using TelegramBot;
 using TelegramBot.Handler;
-
 
 CurrencyDataHandler dataHandler = new CurrencyDataHandler();
 ErrorHandler errorHandler = new ErrorHandler();

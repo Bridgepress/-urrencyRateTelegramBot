@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBotApp", "TelegramBotApp\TelegramBotApp.csproj", "{67D884C9-B398-43FE-A1D9-E8FE2DA21558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBot.Handler", "TelegramBot.Handler\TelegramBot.Handler.csproj", "{E33DBD9B-8488-484D-95D4-ED53A0347E5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot.Handler", "TelegramBot.Handler\TelegramBot.Handler.csproj", "{E33DBD9B-8488-484D-95D4-ED53A0347E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBot.Handler.Tests", "TelegramBot.Handler.Tests\TelegramBot.Handler.Tests.csproj", "{886B0883-6F5F-412F-9C6F-068E817E67E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot.Handler.Tests", "TelegramBot.Handler.Tests\TelegramBot.Handler.Tests.csproj", "{886B0883-6F5F-412F-9C6F-068E817E67E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
