@@ -10,29 +10,16 @@ namespace TelegramBot.Handler.Tests
         [DataRow("EUE 01.11.2022", "Currency code not supported")]
         [DataRow("EUEs 01.11.2022", "Bad request")]
         [DataRow("", "Bad request")]
+        [DataRow("EUR 01.11.2022", "UAH : EUR - Sale Rate: 8, Purchase Rate: 9")]
 
         public async Task ErorrRequest(string testString, string expectedValue)
         {
             // Arrange
-            IApiRequest loaderExchangeRates = new RecipientPrivatBankData();
-            CurrencyDataHandler currencyDataHandler = new CurrencyDataHandler();
-            // Act
-            string strResult = await currencyDataHandler.SearchEnterCurrencyData(testString, loaderExchangeRates);
-            // Assert
-            Assert.AreEqual(expectedValue, strResult);
-        }
-
-        [TestMethod]
-
-        public async Task CurrencyRequest()
-        {
-            // Arrange
-            Mock<IApiRequest> mock = new Mock<IApiRequest>();
-            DateTime dateTime = new DateTime(2022, 11, 01);
-            mock.Setup(m => m.ApiRequest(dateTime)).ReturnsAsync((new BankCurrencyRates
+            BankCurrencyRates bankCurrencyRates = new BankCurrencyRates
             {
                 Bank = "PB",
                 Currency = Enums.CurrencyCodes.UAH,
+                ArchiveDate = "01.11.2022",
                 ExchangeRate = new List<ExchangeRate>
                 {
                     new ExchangeRate
@@ -44,12 +31,14 @@ namespace TelegramBot.Handler.Tests
                         PurchaseRateNB = 9
                     }
                 }
-            }));
+            };
+            Mock<IApiRequest> mock = new Mock<IApiRequest>();
+            mock.Setup(m => m.ApiRequest(It.IsAny<DateTime>())).Returns(Task.FromResult(bankCurrencyRates));
             CurrencyDataHandler currencyDataHandler = new CurrencyDataHandler();
             // Act
-            string strResult = await currencyDataHandler.SearchEnterCurrencyData("EUR 01.11.2022", mock.Object);
+            string strResult = await currencyDataHandler.SearchEnterCurrencyData(testString, mock.Object);
             // Assert
-            Assert.AreEqual("UAH : EUR - Sale Rate: 8, Purchase Rate: 9", strResult);
+            Assert.AreEqual(expectedValue, strResult);
         }
     }
 }

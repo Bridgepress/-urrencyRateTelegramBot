@@ -2,6 +2,6 @@
 {
     public interface IApiRequest
     {
-        Task<BankCurrencyRates?> ApiRequest(DateTime dateTime);
+        Task<BankCurrencyRates> ApiRequest(DateTime dateTime);
     }
 }
